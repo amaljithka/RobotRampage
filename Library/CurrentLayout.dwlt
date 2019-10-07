@@ -698,19 +698,19 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Models
+    - Assets/Scripts
   m_ViewMode: 1
   m_StartGridSize: 75
   m_LastFolders:
-  - Assets/Models
+  - Assets/Scripts
   m_LastFoldersGridSize: 75
   m_LastProjectPath: E:\RobotRampage
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 79}
-    m_SelectedIDs: 342f0000
-    m_LastClickedID: 12084
+    m_SelectedIDs: 80390000
+    m_LastClickedID: 14720
     m_ExpandedIDs: 000000000c280000b22a00009a2c0000ce34000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -858,9 +858,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 78fbffff
-      m_LastClickedID: -1160
-      m_ExpandedIDs: 7cf4ffff0ef9ffffd6fbffffda370000e2370000
+      m_SelectedIDs: 
+      m_LastClickedID: 0
+      m_ExpandedIDs: d6fbffffee370000f6370000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
