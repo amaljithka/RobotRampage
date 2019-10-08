@@ -14,6 +14,8 @@ public class Robot : MonoBehaviour
     private float timeLastFired;
     private bool isDead;
 
+    public Animator robot;
+
     void Start()
     {
         // 1
@@ -50,6 +52,6 @@ public class Robot : MonoBehaviour
 
     private void fire()
     {
-        Debug.Log("Fire");
+        robot.Play("Fire");
     }
 }
