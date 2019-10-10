@@ -60,4 +60,32 @@ public class Robot : MonoBehaviour
         missile.transform.rotation = missileFireSpot.transform.rotation;
         robot.Play("Fire");
     }
+
+    public void TakeDamage(int amount)
+    {
+        if (isDead)
+        {
+            return;
+        }
+
+        health -= amount;
+
+        if (health <= 0)
+        {
+            isDead = true;
+            robot.Play("Die");
+            StartCoroutine("DestroyRobot");
+            //GetComponent<AudioSource>().PlayOneShot(deathSound);
+        }
+        else
+        {
+            //GetComponent<AudioSource>().PlayOneShot(weakHitSound);
+        }
+    }
+
+    IEnumerator DestroyRobot()
+    {
+        yield return new WaitForSeconds(1.5f);
+        Destroy(gameObject);
+    }
 }

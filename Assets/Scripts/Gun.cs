@@ -10,15 +10,25 @@ public class Gun : MonoBehaviour
     public AudioClip liveFire;
     public AudioClip dryFire;
 
+    public float zoomFactor;
+    public int range;
+    public int damage;
+
+    private float zoomFOV;
+    private float zoomSpeed = 6;
+
 
     void Start()
     {
+       
         lastFireTime = Time.time - 10;
     }
 
     protected virtual void Update()
     {
+        
     }
+
     protected void Fire()
     {
         if (ammo.HasAmmo(tag))
