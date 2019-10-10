@@ -49,5 +49,26 @@ public class Gun : MonoBehaviour
             GetComponent<AudioSource>().PlayOneShot(dryFire);
         }
         GetComponentInChildren<Animator>().Play("Fire");
+
+        Ray ray = Camera.main.ViewportPointToRay(new
+                        Vector3(0.5f, 0.5f, 0));
+        RaycastHit hit;
+        if (Physics.Raycast(ray, out hit, range))
+        {
+            processHit(hit.collider.gameObject);
+        }
+    }
+
+    private void processHit(GameObject hitObject)
+    {
+        if (hitObject.GetComponent<Player>() != null)
+        {
+            hitObject.GetComponent<Player>().TakeDamage(damage);
+        }
+
+        if (hitObject.GetComponent<Robot>() != null)
+        {
+            hitObject.GetComponent<Robot>().TakeDamage(damage);
+        }
     }
 }
