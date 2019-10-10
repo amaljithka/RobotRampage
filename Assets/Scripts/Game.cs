@@ -4,15 +4,23 @@ using UnityEngine;
 
 public class Game : MonoBehaviour
 {
-    // Start is called before the first frame update
+    private static Game singleton;
+    [SerializeField] RobotSpawn[] spawns;
+    public int enemiesLeft;
+
+    // 1
     void Start()
     {
-        
+        singleton = this;
+        SpawnRobots();
     }
-
-    // Update is called once per frame
-    void Update()
+    // 2 
+    private void SpawnRobots()
     {
-        
-    }
+        foreach (RobotSpawn spawn in spawns)
+        {
+            spawn.SpawnRobot();
+            enemiesLeft++;
+        }
+    } 
 }
