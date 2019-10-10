@@ -20,13 +20,21 @@ public class Gun : MonoBehaviour
 
     void Start()
     {
-       
+        zoomFOV = Constants.CameraDefaultZoom / zoomFactor;
         lastFireTime = Time.time - 10;
     }
 
     protected virtual void Update()
     {
-        
+        // Right Click (Zoom)   
+        if (Input.GetMouseButton(1))
+        {
+            Camera.main.fieldOfView = Mathf.Lerp(Camera.main.fieldOfView, zoomFOV, zoomSpeed * Time.deltaTime);
+        }
+        else
+        {
+            Camera.main.fieldOfView = Constants.CameraDefaultZoom;
+        }
     }
 
     protected void Fire()
