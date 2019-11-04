@@ -8,13 +8,19 @@ public class Game : MonoBehaviour
     [SerializeField] RobotSpawn[] spawns;
     public int enemiesLeft;
 
-    // 1
+    public GameUI gameUI;
+    public GameObject player;
+    public int score;
+    public int waveCountdown;
+    public bool isGameOver;
+
+    
     void Start()
     {
         singleton = this;
         SpawnRobots();
     }
-    // 2 
+     
     private void SpawnRobots()
     {
         foreach (RobotSpawn spawn in spawns)
